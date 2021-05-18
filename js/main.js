@@ -167,6 +167,7 @@ setTimeout(() => {
     const searchMain = document.querySelector('#local-search')
     searchMain.style.display = 'block'
     setTimeout(() => {
+      document.getElementById('search-input').autofocus = true
       document.addEventListener('click', searchClick)
     }, 0)
   })
@@ -179,7 +180,6 @@ const localSearch = function (path) {
     .then((res) => {
       let input = document.getElementById('search-input')
       let resultContent = document.getElementById('search-content')
-
       input.addEventListener('input', function () {
         let str = '<ul class="search-result-list">'
         let keyword = this.value.trim().toLowerCase()
@@ -211,7 +211,7 @@ const localSearch = function (path) {
             isMatch = false
           }
           if (isMatch) {
-            str += `<li><a href="${data.url}" class="search-result-title" >'${dataTitle}</a>`
+            str += `<li><a href="${data.url}" class="search-result-title" >${dataTitle}</a>`
             const content = data.content
             if (firstOccur >= 0) {
               const start = Math.max(0, firstOccur - 12)

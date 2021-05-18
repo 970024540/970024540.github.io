@@ -363,7 +363,7 @@
 <li>然后访问<a target="_blank" rel="noopener" href="http://localhost:8080/">http://localhost:8080</a> //默认端口为8080，访问失败可以是端口被占用了，在config/index.js里改dev:{port}，换一个端口尝试</li>
 </ul>
 <h4 id="多页面原理介绍"><a href="#多页面原理介绍" class="headerlink" title="多页面原理介绍"></a>多页面原理介绍</h4><p> 下面开始为脚手架配置多页面原理，此次搭建的是写死的配置，后面会添加动态方法</p>
-<p> 效果图：<br><img src="https://github.com/970024540/vue-cli-MultiPage/blob/master/src/assets/mse.jpg?raw=true" alt="mse.html" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://github.com/970024540/vue-cli-MultiPage/blob/master/src/assets/mse.jpg?raw=true" class="lozad post-image lozad post-image lozad post-image" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://github.com/970024540/vue-cli-MultiPage/blob/master/src/assets/mse.jpg?raw=true" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://github.com/970024540/vue-cli-MultiPage/blob/master/src/assets/mse.jpg?raw=true"><br><img src="https://github.com//970024540/vue-cli-MultiPage/blob/master/src/assets/from.png?raw=true" alt="from.html" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://github.com//970024540/vue-cli-MultiPage/blob/master/src/assets/from.png?raw=true" class="lozad post-image lozad post-image lozad post-image" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://github.com//970024540/vue-cli-MultiPage/blob/master/src/assets/from.png?raw=true" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://github.com//970024540/vue-cli-MultiPage/blob/master/src/assets/from.png?raw=true"><br><img src="https://github.com/970024540/vue-cli-MultiPage/blob/master/src/assets/common.jpg?raw=true" alt="common.html" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://github.com/970024540/vue-cli-MultiPage/blob/master/src/assets/common.jpg?raw=true" class="lozad post-image lozad post-image lozad post-image" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://github.com/970024540/vue-cli-MultiPage/blob/master/src/assets/common.jpg?raw=true" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://github.com/970024540/vue-cli-MultiPage/blob/master/src/assets/common.jpg?raw=true"></p>
+<p> 效果图：<br><img src="https://github.com/970024540/vue-cli-MultiPage/blob/master/src/assets/mse.jpg?raw=true" alt="mse.html" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://github.com/970024540/vue-cli-MultiPage/blob/master/src/assets/mse.jpg?raw=true" class="lozad post-image"><br><img src="https://github.com//970024540/vue-cli-MultiPage/blob/master/src/assets/from.png?raw=true" alt="from.html" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://github.com//970024540/vue-cli-MultiPage/blob/master/src/assets/from.png?raw=true" class="lozad post-image"><br><img src="https://github.com/970024540/vue-cli-MultiPage/blob/master/src/assets/common.jpg?raw=true" alt="common.html" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://github.com/970024540/vue-cli-MultiPage/blob/master/src/assets/common.jpg?raw=true" class="lozad post-image"></p>
 <p> 多页面配置分dev环境跟prod环境</p>
 <ul>
 <li>我把html部分都放到了./html里面，把入口文件都放到了./src/entry/这个文件夹下面，方便统一管理，现在我们先安装好脚手架</li>
@@ -459,7 +459,7 @@
 <li>我在mse.html里面进行演示<br>在src/mse/app/App.vue里面我们加入对应的按钮<pre class="highlight"><code class="hljs plaintext">&lt;template&gt;<br>&lt;button @click=&quot;btnClick2&quot;&gt;点我请求数据拼多多&lt;/button&gt;<br>&lt;ul v-for=&quot;(item,index) in pinDuoList&quot;&gt;<br>    &lt;li&gt;&#123;&#123;item.goods_name&#125;&#125;&lt;/li&gt;<br>&lt;/ul&gt;<br>&lt;/template&gt;<br>&lt;script&gt;<br>    methods:&#123;<br>        //定义点击按钮事件，发送请求<br>        btnClick2()&#123;<br>            let params=&#123;<br>                opt_type:1,<br>                offset:0,<br>                size:50<br>            &#125;<br>            requestpingDuo(params).then(res=&gt;&#123;<br>                if(res)&#123;<br>                    this.pinDuoList=res.goods_list;<br>                &#125;<br>            &#125;)<br>        &#125;,<br>    &#125;<br>&lt;/script&gt;<br></code></pre></li>
 </ul>
 <p> 效果图</p>
-<p><img src="https://github.com/970024540/vue-cli-MultiPage/blob/master/src/assets/axios.png?raw=true" alt="axios" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://github.com/970024540/vue-cli-MultiPage/blob/master/src/assets/axios.png?raw=true" class="lozad post-image lozad post-image lozad post-image" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://github.com/970024540/vue-cli-MultiPage/blob/master/src/assets/axios.png?raw=true" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://github.com/970024540/vue-cli-MultiPage/blob/master/src/assets/axios.png?raw=true"></p>
+<p><img src="https://github.com/970024540/vue-cli-MultiPage/blob/master/src/assets/axios.png?raw=true" alt="axios" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://github.com/970024540/vue-cli-MultiPage/blob/master/src/assets/axios.png?raw=true" class="lozad post-image"></p>
 <ul>
 <li>这样就实现了请求接口啦，下一次更新会上如何规避打包时不需要打包的页面</li>
 </ul>
@@ -616,16 +616,16 @@
   </div>
   <div class="categories-list">
     
-      <a href="/categories/kaze/">
+      <a href="/categories/%E4%B8%AA%E4%BA%BA/">
         <div class="categories-list-item">
-          kaze
+          个人
           <span class="categories-list-item-badge">1</span>
         </div>
       </a>
     
-      <a href="/categories/%E4%B8%AA%E4%BA%BA/">
+      <a href="/categories/kaze/">
         <div class="categories-list-item">
-          个人
+          kaze
           <span class="categories-list-item-badge">1</span>
         </div>
       </a>
@@ -652,18 +652,6 @@
   <div class="tags-list">
     
       <a 
-        href="/tags/%E5%A4%9A%E9%A1%B5%E9%9D%A2/" 
-        title="多页面">
-        <div class="tags-list-item">多页面</div>
-      </a>
-    
-      <a 
-        href="/tags/vue/" 
-        title="vue">
-        <div class="tags-list-item">vue</div>
-      </a>
-    
-      <a 
         href="/tags/%E4%B8%AA%E4%BA%BA/" 
         title="个人">
         <div class="tags-list-item">个人</div>
@@ -673,6 +661,18 @@
         href="/tags/kaze%E9%85%8D%E7%BD%AE/" 
         title="kaze配置">
         <div class="tags-list-item">kaze配置</div>
+      </a>
+    
+      <a 
+        href="/tags/vue/" 
+        title="vue">
+        <div class="tags-list-item">vue</div>
+      </a>
+    
+      <a 
+        href="/tags/%E5%A4%9A%E9%A1%B5%E9%9D%A2/" 
+        title="多页面">
+        <div class="tags-list-item">多页面</div>
       </a>
     
   </div>
